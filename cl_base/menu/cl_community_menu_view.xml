@@ -4,17 +4,17 @@
 
         <!-- Community -->
         <menuitem name="Community" id="menu_commutity" 
-            groups="clv_base.group_base_user"
+            groups="cl_base.group_base_user"
             sequence="14"/>
             <!-- Community/Community -->
             <menuitem name="Community" id="menu_commutity_community"  
                 parent="menu_commutity"
-                groups="clv_base.group_base_user"
+                groups="cl_base.group_base_user"
                 sequence="10"/>
                 <!-- Community/Community/Configuration -->
                 <menuitem name="Configuration" id="menu_commutity_community_config"  
                     parent="menu_commutity_community"
-                    groups="clv_base.group_base_manager"
+                    groups="cl_base.group_base_manager"
                     sequence="90"/>
 
     </data>
