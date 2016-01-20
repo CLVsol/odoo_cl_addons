@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Health -->
+        <menuitem name="Health" id="menu_health" 
+            groups="clv_base.group_base_user"
+            sequence="15"/>
+            <!-- Health/Health -->
+            <menuitem name="Health" id="menu_health_health"  
+                parent="menu_health"
+                groups="clv_base.group_base_user"
+                sequence="10"/>
+                <!-- Health/Health/Configuration -->
+                <menuitem name="Configuration" id="menu_health_health_config"  
+                    parent="menu_health_health"
+                    groups="clv_base.group_base_manager"
+                    sequence="90"/>
+        
+    </data>
+</openerp>
