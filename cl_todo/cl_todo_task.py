@@ -22,6 +22,7 @@ from openerp import models, fields, api
 
 class cl_todo_task(models.Model):
     _name = 'cl_todo.task'
+    _inherit = ['mail.thread']
 
     name = fields.Char('Description', required=True, help="What needs to be done?")
     user_id = fields.Many2one('res.users', 'Responsible')
