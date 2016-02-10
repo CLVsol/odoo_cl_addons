@@ -2,8 +2,8 @@
 <openerp>
     <data>
 
-        <!-- Mail/Messaging/To-Do Tasks -->
-        <menuitem name="To-Do Tasks" id="menu_cl_todo_task"
+        <!-- Mail/Messaging/My To-Do -->
+        <menuitem name="My To-Do" id="menu_cl_todo_task"
             parent="mail.mail_feeds"
             groups="base.group_user"
             sequence="20"

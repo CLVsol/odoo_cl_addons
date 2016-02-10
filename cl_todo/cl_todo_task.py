@@ -22,18 +22,27 @@ from openerp import models, fields, api
 
 class cl_todo_task(models.Model):
     _name = 'cl_todo.task'
+    _inherit = ['mail.thread']
 
-    name = fields.Char('Description', required=True)
+    name = fields.Char('Description', required=True, help="What needs to be done?")
+    user_id = fields.Many2one('res.users', 'Responsible')
+    date_deadline = fields.Date('Deadline')
     is_done = fields.Boolean('Done?')
     active = fields.Boolean('Active?', default=True)
 
     @api.one
     def do_toggle_done(self):
-        self.is_done = not self.is_done
-        return True
+        if self.user_id != self.env.user:
+            raise Exception('Only the responsible can do this!')
+        else:
+            self.is_done = not self.is_done
+            return True
 
     @api.multi
     def do_clear_done(self):
-        done_recs = self.search([('is_done', '=', True)])
+        domain = [('is_done', '=', True),
+                  '|', ('user_id', '=', self.env.uid),
+                       ('user_id', '=', False)]
+        done_recs = self.search(domain)
         done_recs.write({'active': False})
         return True
