@@ -45,6 +45,7 @@
                     <field name="name"/>
                     <filter string="Not Done" domain="[('is_done','=',False)]"/>
                     <filter string="Done" domain="[('is_done','!=',False)]"/>
+                    <filter string="Not Active" domain="[('active','=',False)]"/>
                 </search>
             </field>
         </record>
