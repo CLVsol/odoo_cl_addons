@@ -21,7 +21,7 @@ from openerp import models, fields, api
 
 
 class cl_todo_task(models.Model):
-    _name = 'cl_todo_task'
+    _name = 'cl_todo.task'
 
     name = fields.Char('Description', required=True)
     is_done = fields.Boolean('Done?')

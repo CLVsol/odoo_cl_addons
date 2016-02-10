@@ -3,8 +3,8 @@
     <data>
 
         <record id="view_tree_cl_todo_task" model="ir.ui.view">
-            <field name="name">cl_todo_task.tree</field>
-            <field name="model">cl_todo_task</field>
+            <field name="name">cl_todo.task.tree</field>
+            <field name="model">cl_todo.task</field>
             <field name="arch" type="xml">
                 <tree colors="gray:is_done==True">
                     <field name="name"/>
@@ -14,8 +14,8 @@
         </record>
 
         <record id="view_form_cl_todo_task" model="ir.ui.view">
-            <field name="name">cl_todo_task.form</field>
-            <field name="model">cl_todo_task</field>
+            <field name="name">cl_todo.task.form</field>
+            <field name="model">cl_todo.task</field>
             <field name="arch" type="xml">
                 <form>
                     <header>
@@ -38,8 +38,8 @@
         </record>
 
         <record id="view_filter_cl_todo_task" model="ir.ui.view">
-            <field name="name">cl_todo_task.search</field>
-            <field name="model">cl_todo_task</field>
+            <field name="name">cl_todo.task.search</field>
+            <field name="model">cl_todo.task</field>
             <field name="arch" type="xml">
                 <search>
                     <field name="name"/>
@@ -51,7 +51,7 @@
 
         <act_window id="action_cl_todo_task"
             name="To-do Task"
-            res_model="cl_todo_task"
+            res_model="cl_todo.task"
             view_mode="tree,form"/>
 
     </data>
