@@ -27,14 +27,14 @@
     'website': 'http://clvsol.com',
     'depends': [
         'cl_base',
-        # 'cl_tag',
+        'cl_tag',
         ],
     'data': [
         'security/cl_annotation_security.xml',
         # 'security/ir.model.access.csv',
         'cl_annotation_view.xml',
         'category/cl_annotation_category_view.xml',
-        # 'cl_tag/cl_tag_view.xml',
+        'tag/cl_tag_view.xml',
         # 'seq/cl_annotation_sequence.xml',
         # 'seq/cl_annotation_category_sequence.xml',
         # 'wkf/cl_annotation_workflow.xml',
