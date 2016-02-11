@@ -31,9 +31,9 @@
                             <field name="name" default_focus="1" placeholder="Subject..."/>
                         </h2>
                         <label for="body" class="oe_edit_only"/>
-                        <h2>
+                        <h3>
                             <field name="body" colspan="4" nolabel="1" placeholder="Annotations..."/>
-                        </h2>
+                        </h3>
                         <group>
                             <field name="date"/>
                             <field name="author"/>

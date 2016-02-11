@@ -17,9 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import cl_annotation
-import category
-# import cl_tag
-# import seq
-# import wkf
-# import history
+import cl_annotation_category
