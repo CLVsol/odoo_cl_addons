@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_cl_tag_tag_user,cl_tag,model_cl_tag,cl_base.group_tag_user,1,0,0,0
+access_cl_tag_tag_manager,cl_tag,model_cl_tag,cl_base.group_tag_manager,1,1,1,0
+access_cl_tag_base_smanager,cl_tag,model_cl_tag,cl_base.group_base_smanager,1,1,1,1
+
+access_cl_tag_history_tag_user,cl_tag.history,model_cl_tag_history,cl_base.group_tag_user,1,0,0,0
+access_cl_tag_history_tag_manager,cl_tag.history,model_cl_tag_history,cl_base.group_tag_manager,1,1,1,0
+access_cl_tag_history_base_smanager,cl_tag.history,model_cl_tag_history,cl_base.group_base_smanager,1,1,1,1
