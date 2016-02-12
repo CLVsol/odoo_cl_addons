@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Base/Base/Addresses -->
+        <menuitem name="Addresses" id="menu_base_base_addresses"
+            parent="cl_base.menu_base_base"
+            groups="cl_base.group_address_user"
+            sequence="50"
+            action="cl_address.act_open_cl_address_view"/>
+
+        <!-- Base/Configuration/Configuration/Address Categories -->
+        <menuitem name="Address Categories" id="menu_base_config_config_address_categories" 
+            parent="cl_base.menu_base_config_config"
+            groups="cl_base.group_address_user"
+            sequence="50"
+            action="cl_address.act_open_cl_address_category_view"/>
+
+    </data>
+</openerp>
