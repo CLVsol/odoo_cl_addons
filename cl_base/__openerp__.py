@@ -29,7 +29,7 @@
     'data': [
         'security/cl_base_security.xml',
         'menu/cl_base_menu_view.xml',
-        # 'menu/cl_groupings_menu_view.xml',
+        'menu/cl_groupings_menu_view.xml',
         # 'menu/cl_agro_menu_view.xml',
         # 'menu/cl_community_menu_view.xml',
         # 'menu/cl_health_menu_view.xml',
