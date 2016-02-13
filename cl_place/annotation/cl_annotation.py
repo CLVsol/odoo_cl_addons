@@ -17,27 +17,28 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Base Module',
-    'summary': 'Base Module needed for all CLVsol Solutions.',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'depends': [],
-    'data': [
-        'security/cl_base_security.xml',
-        'menu/cl_base_menu_view.xml',
-        'menu/cl_groupings_menu_view.xml',
-        # 'menu/cl_agro_menu_view.xml',
-        # 'menu/cl_community_menu_view.xml',
-        # 'menu/cl_health_menu_view.xml',
-        # 'menu/cl_insurance_menu_view.xml',
-        # 'menu/cl_pharmacy_menu_view.xml',
-        ],
-    'test': [],
-    'installable': True,
-    'application': False,
-    'active': False,
-}
+from openerp import models, fields
+
+
+class cl_place(models.Model):
+    _inherit = 'cl_place'
+
+    annotation_ids = fields.Many2many(
+        'cl_annotation',
+        'cl_place_annotation_rel',
+        'place_id',
+        'annotation_id',
+        'Annotations'
+        )
+
+
+class cl_annotation(models.Model):
+    _inherit = 'cl_annotation'
+
+    place_ids = fields.Many2many(
+        'cl_place',
+        'cl_place_annotation_rel',
+        'annotation_id',
+        'place_id',
+        'Places'
+        )
