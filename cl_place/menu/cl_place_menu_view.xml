@@ -20,11 +20,11 @@
             groups="cl_base.group_place_user"
             sequence="10"/-->
             <!-- Groupings/Configuration/Configuration/Place/Categories -->
-<!--             <menuitem name="Place Categories" id="menu_groupings_config_config_place_categories"
+            <menuitem name="Place Categories" id="menu_groupings_config_config_place_categories"
                 parent="cl_base.menu_groupings_config_config"
                 groups="cl_base.group_place_user"
                 sequence="10"
                 action="cl_place.act_open_cl_place_category_view"/>
- -->
+
     </data>
 </openerp>

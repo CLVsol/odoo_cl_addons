@@ -35,7 +35,7 @@
         'security/cl_place_security.xml',
         # 'security/ir.model.access.csv',
         'cl_place_view.xml',
-        # 'category/cl_place_category_view.xml',
+        'category/cl_place_category_view.xml',
         # 'tag/cl_tag_view.xml',
         # 'annotation/cl_annotation_view.xml',
         # 'seq/cl_place_seq_view.xml',
