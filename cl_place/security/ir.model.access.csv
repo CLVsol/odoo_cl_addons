@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_cl_place_place_user,cl_place,model_cl_place,cl_base.group_place_user,1,0,0,0
+access_cl_place_place_manager,cl_place,model_cl_place,cl_base.group_place_manager,1,1,1,0
+access_cl_place_base_smanager,cl_place,model_cl_place,cl_base.group_base_smanager,1,1,1,1
+
+access_cl_place_category_place_user,cl_place.category,model_cl_place_category,cl_base.group_place_user,1,0,0,0
+access_cl_place_category_place_category_manager,cl_place.category,model_cl_place_category,cl_base.group_place_category_manager,1,1,1,0
+access_cl_place_category_base_smanager,cl_place.category,model_cl_place_category,cl_base.group_base_smanager,1,1,1,1
+
+access_cl_place_history_place_user,cl_place.history,model_cl_place_history,cl_base.group_place_user,1,0,0,0
+access_cl_place_history_place_manager,cl_place.history,model_cl_place_history,cl_base.group_place_manager,1,1,1,0
+access_cl_place_history_base_smanager,cl_place.history,model_cl_place_history,cl_base.group_base_smanager,1,1,1,1

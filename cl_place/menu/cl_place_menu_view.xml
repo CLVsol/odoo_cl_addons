@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Groupings/Groupings/Place -->
+        <!--menuitem name="Place" id="menu_groupings_groupings_place" 
+            parent="cl_base.menu_groupings_groupings"
+            groups="cl_base.group_place_user"
+            sequence="10"/-->
+            <!-- Groupings/Groupings/Place/Places -->
+            <menuitem name="Places" id="menu_groupings_groupings_place_places"
+                parent="cl_base.menu_groupings_groupings"
+                groups="cl_base.group_place_user"
+                sequence="10"
+                action="cl_place.act_open_cl_place_view"/>
+
+        <!-- Groupings/Configuration/Configuration/Place -->
+        <!--menuitem name="Place" id="menu_groupings_config_config_place" 
+            parent="cl_base.menu_groupings_config_config"
+            groups="cl_base.group_place_user"
+            sequence="10"/-->
+            <!-- Groupings/Configuration/Configuration/Place/Categories -->
+<!--             <menuitem name="Place Categories" id="menu_groupings_config_config_place_categories"
+                parent="cl_base.menu_groupings_config_config"
+                groups="cl_base.group_place_user"
+                sequence="10"
+                action="cl_place.act_open_cl_place_category_view"/>
+ -->
+    </data>
+</openerp>
