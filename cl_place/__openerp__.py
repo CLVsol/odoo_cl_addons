@@ -37,7 +37,7 @@
         'cl_place_view.xml',
         'category/cl_place_category_view.xml',
         'tag/cl_tag_view.xml',
-        # 'annotation/cl_annotation_view.xml',
+        'annotation/cl_annotation_view.xml',
         # 'seq/cl_place_seq_view.xml',
         # 'seq/cl_place_sequence.xml',
         # 'seq/cl_place_category_sequence.xml',
