@@ -16,12 +16,12 @@
             action="cl_medicament.act_open_cl_medicament_template_view"/>
  -->
         <!-- Pharmacy/Configuration/Configuration/Medicament/Categories -->
-<!--         <menuitem name="Categories" id="menu_pharmacy_config_config_medicament_categories" 
+        <menuitem name="Categories" id="menu_pharmacy_config_config_medicament_categories" 
             parent="cl_base.menu_pharmacy_config_config_medicament"
             groups="cl_base.group_medicament_user"
             sequence="10"
             action="cl_medicament.act_open_cl_medicament_category_view"/>
- -->        <!-- Pharmacy/Configuration/Configuration/Medicament/Active Components -->
+        <!-- Pharmacy/Configuration/Configuration/Medicament/Active Components -->
 <!--         <menuitem name="Active Components" id="menu_pharmacy_config_config_medicament_active_components"
             parent="cl_base.menu_pharmacy_config_config_medicament"
             groups="cl_base.group_base_manager"
