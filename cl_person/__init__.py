@@ -18,7 +18,7 @@
 ################################################################################
 
 import cl_person
-# import category
+import category
 # import tag
 # import annotation
 # import seq
