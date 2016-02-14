@@ -36,7 +36,7 @@
         'security/cl_medicament_security.xml',
         # 'security/ir.model.access.csv',
         # 'product_product_view.xml',
-        # 'cl_medicament_view.xml',
+        'cl_medicament_view.xml',
         # 'category/cl_medicament_category_view.xml',
         # 'manufacturer/cl_medicament_manufacturer_view.xml',
         # 'active_component/cl_medicament_active_component_view.xml',

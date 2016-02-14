@@ -3,12 +3,12 @@
     <data>
 
         <!-- Pharmacy/Medicament/Medicaments -->
-<!--         <menuitem name="Medicaments" id="menu_pharmacy_medicament_medicaments"
+        <menuitem name="Medicaments" id="menu_pharmacy_medicament_medicaments"
             parent="cl_base.menu_pharmacy_medicament"
             groups="cl_base.group_medicament_user"
             sequence="10"
             action="cl_medicament.act_open_cl_medicament_view"/>
- -->        <!-- Pharmacy/Medicament/Templates -->
+        <!-- Pharmacy/Medicament/Templates -->
 <!--         <menuitem name="Templates" id="menu_pharmacy_medicament_templates"
             parent="cl_base.menu_pharmacy_medicament"
             groups="cl_base.group_medicament_user"

@@ -18,7 +18,7 @@
 ################################################################################
 
 # import product_product
-# import cl_medicament
+import cl_medicament
 # import category
 # import manufacturer
 # import active_component
