@@ -50,7 +50,7 @@
         # 'therapeutic_class/cl_medicament_therapeutic_class_view.xml',
         # 'form/cl_medicament_form_view.xml',
         # 'route/cl_medicament_route_view.xml',
-        # 'uom/cl_medicament_uom_view.xml',
+        'uom/cl_medicament_uom_view.xml',
         # 'template/cl_medicament_template_view.xml',
         # 'seq/cl_medicament_template_sequence.xml',
         'menu/cl_medicament_menu_view.xml',

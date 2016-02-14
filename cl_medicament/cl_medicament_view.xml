@@ -66,7 +66,7 @@
                                 <!--field name="pres_form" placeholder="Presentation Form..."/-->
                                 <!--field name="pres_form_2" placeholder="Presentation Form 2..."/-->
                                 <field name="pres_quantity" placeholder="Presentation Quantity..."/>
-                                <!--field name="pres_quantity_unit" placeholder="Presentation Quantity..."/-->
+                                <field name="pres_quantity_unit" placeholder="Presentation Quantity Unity..."/>
                             </group>
                             <group name="Y">
                             </group>

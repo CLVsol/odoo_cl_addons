@@ -64,11 +64,11 @@
             sequence="60" 
             action="cl_medicament.act_open_cl_medicament_route_view" />
  -->        <!-- Pharmacy/Configuration/Configuration/Medicament/Uom -->
-<!--         <menuitem name="Uom" id="menu_pharmacy_config_config_medicament_uom"  
+        <menuitem name="Uom" id="menu_pharmacy_config_config_medicament_uom"  
             parent="cl_base.menu_pharmacy_config_config_medicament"
             groups="cl_base.group_base_manager"
             sequence="70" 
             action="cl_medicament.act_open_cl_medicament_uom_view" />
- -->
+
     </data>
 </openerp>
