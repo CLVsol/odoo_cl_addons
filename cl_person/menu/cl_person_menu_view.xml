@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Community -->
+        <!--menuitem name="Community" id="menu_commutity" 
+            groups="cl_base.group_base_user"
+            sequence="13"/-->
+            <!-- Community/Community -->
+            <!--menuitem name="Community" id="menu_commutity_community"  
+                parent="menu_commutity"
+                groups="cl_base.group_base_user"
+                sequence="10"/-->
+                <menuitem name="Persons" id="menu_commutity_community_persons"
+                    parent="cl_base.menu_commutity_community"
+                    groups="cl_base.group_person_user"
+                    sequence="10"
+                    action="cl_person.act_open_cl_person_view"/>
+                <!-- Community/Community/Configuration -->
+                <!--menuitem name="Configuration" id="menu_commutity_community_config"  
+                    parent="menu_commutity_community"
+                    groups="cl_base.group_base_manager"
+                    sequence="90"/-->
+                    <!-- Community/Community/Configuration/Person -->
+<!--                     <menuitem name="Person Categories" id="menu_commutity_community_config_person_categories" 
+                        parent="cl_base.menu_commutity_community_config"
+                        groups="cl_base.group_person_user"
+                        sequence="10"
+                        action="cl_person.act_open_cl_person_category_view"/>
+ -->
+    </data>
+</openerp>

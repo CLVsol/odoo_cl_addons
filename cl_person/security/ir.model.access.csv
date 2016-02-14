@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_cl_person_person_user,cl_person,model_cl_person,cl_base.group_person_user,1,0,0,0
+access_cl_person_person_manager,cl_person,model_cl_person,cl_base.group_person_manager,1,1,1,0
+access_cl_person_base_smanager,cl_person,model_cl_person,cl_base.group_base_smanager,1,1,1,1
+
+access_cl_person_category_person_user,cl_person.category,model_cl_person_category,cl_base.group_person_user,1,0,0,0
+access_cl_person_category_person_category_manager,cl_person.category,model_cl_person_category,cl_base.group_person_category_manager,1,1,1,0
+access_cl_person_category_base_smanager,cl_person.category,model_cl_person_category,cl_base.group_base_smanager,1,1,1,1
+
+access_cl_person_history_person_user,cl_person.history,model_cl_person_history,cl_base.group_person_user,1,0,0,0
+access_cl_person_history_person_manager,cl_person.history,model_cl_person_history,cl_base.group_person_manager,1,1,1,0
+access_cl_person_history_base_smanager,cl_person.history,model_cl_person_history,cl_base.group_base_smanager,1,1,1,1
