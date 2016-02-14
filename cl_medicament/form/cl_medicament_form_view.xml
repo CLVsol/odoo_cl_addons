@@ -80,6 +80,7 @@
                 </search>
             </field>
         </record>
+        
         <record model="ir.actions.act_window" id="act_open_cl_medicament_form_view">
             <field name="name">Medicament Forms</field>
             <field name="type">ir.actions.act_window</field>

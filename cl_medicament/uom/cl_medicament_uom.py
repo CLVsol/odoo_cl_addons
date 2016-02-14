@@ -27,6 +27,7 @@ class cl_medicament_uom(models.Model):
                        translate=True,
                        help="Unity of Measure.")
     code = fields.Char(size=256, string='Code')
+    description = fields.Char(string='Description', size=256)
     notes = fields.Text(string='Notes')
     active = fields.Boolean('Active',
                             help="If unchecked, it will allow you to hide the uom without removing it.",
