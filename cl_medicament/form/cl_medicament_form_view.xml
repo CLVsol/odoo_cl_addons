@@ -111,17 +111,5 @@
             <field name="view_id" ref="view_cl_medicament_form_tree"/>
         </record>
         
-<!--         <record id="view_cl_medicament_tree_form" model="ir.ui.view">
-            <field name="name">cl_medicament.tree</field>
-            <field name="model">cl_medicament</field>
-            <field name="inherit_id" ref="view_cl_medicament_tree"/>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <field name="code" position="before">
-                    <field name="form_ids"/>
-                </field>
-            </field>
-        </record>
-
- -->    </data>
+    </data>
 </openerp>
