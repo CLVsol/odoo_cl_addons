@@ -31,7 +31,7 @@
         'menu/cl_base_menu_view.xml',
         'menu/cl_groupings_menu_view.xml',
         # 'menu/cl_agro_menu_view.xml',
-        # 'menu/cl_community_menu_view.xml',
+        'menu/cl_community_menu_view.xml',
         # 'menu/cl_health_menu_view.xml',
         # 'menu/cl_insurance_menu_view.xml',
         # 'menu/cl_pharmacy_menu_view.xml',
