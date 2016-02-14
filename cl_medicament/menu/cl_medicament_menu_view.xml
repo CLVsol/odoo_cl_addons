@@ -52,12 +52,12 @@
                 sequence="10"
                 action="cl_medicament.act_open_cl_medicament_manufacturer_str_view" />
  -->        <!-- Pharmacy/Configuration/Configuration/Medicament/Form -->
-<!--         <menuitem name="Form" id="menu_pharmacy_config_config_medicament_form"  
+        <menuitem name="Form" id="menu_pharmacy_config_config_medicament_form"  
             parent="cl_base.menu_pharmacy_config_config_medicament"
             groups="cl_base.group_base_manager"
             sequence="50" 
             action="cl_medicament.act_open_cl_medicament_form_view" />
- -->        <!-- Pharmacy/Configuration/Configuration/Medicament/Route -->
+        <!-- Pharmacy/Configuration/Configuration/Medicament/Route -->
 <!--         <menuitem name="Route" id="menu_pharmacy_config_config_medicament_route"  
             parent="cl_base.menu_pharmacy_config_config_medicament"
             groups="cl_base.group_base_manager"

@@ -17,18 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-# import product_product
-import cl_medicament
-import uom
-import form
-# import category
-# import manufacturer
-# import active_component
-# import tag
-# import annotation
-# import therapeutic_class
-# import route
-# import template
-# import seq
-# import wkf
-# import history
+import cl_medicament_form
