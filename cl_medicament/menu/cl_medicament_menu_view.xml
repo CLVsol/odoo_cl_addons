@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Pharmacy/Medicament/Medicaments -->
+        <menuitem name="Medicaments" id="menu_pharmacy_medicament_medicaments"
+            parent="cl_base.menu_pharmacy_medicament"
+            groups="cl_base.group_medicament_user"
+            sequence="10"
+            action="cl_medicament.act_open_cl_medicament_view"/>
+        <!-- Pharmacy/Medicament/Templates -->
+<!--         <menuitem name="Templates" id="menu_pharmacy_medicament_templates"
+            parent="cl_base.menu_pharmacy_medicament"
+            groups="cl_base.group_medicament_user"
+            sequence="06"
+            action="cl_medicament.act_open_cl_medicament_template_view"/>
+ -->
+        <!-- Pharmacy/Configuration/Configuration/Medicament/Categories -->
+<!--         <menuitem name="Categories" id="menu_pharmacy_config_config_medicament_categories" 
+            parent="cl_base.menu_pharmacy_config_config_medicament"
+            groups="cl_base.group_medicament_user"
+            sequence="10"
+            action="cl_medicament.act_open_cl_medicament_category_view"/>
+ -->        <!-- Pharmacy/Configuration/Configuration/Medicament/Active Components -->
+<!--         <menuitem name="Active Components" id="menu_pharmacy_config_config_medicament_active_components"
+            parent="cl_base.menu_pharmacy_config_config_medicament"
+            groups="cl_base.group_base_manager"
+            sequence="20"
+            action="cl_medicament.act_open_cl_medicament_active_component_view"/>
+ -->            <!-- Pharmacy/Configuration/Configuration/Medicament/Active Components/Strings -->
+<!--             <menuitem name="Strings" id="menu_pharmacy_config_config_medicament_active_components_strings"
+                parent="menu_pharmacy_config_config_medicament_active_components"
+                groups="cl_base.group_base_manager"
+                sequence="10"
+                action="cl_medicament.act_open_cl_medicament_active_component_str_view"/>
+ -->        <!-- Pharmacy/Configuration/Configuration/Medicament/Therapeutic Classes -->
+<!--         <menuitem name="Therapeutic Classes" id="menu_pharmacy_config_config_medicament_therapeutic_classes"
+            parent="cl_base.menu_pharmacy_config_config_medicament"
+            groups="cl_base.group_base_manager"
+            sequence="30"
+            action="cl_medicament.act_open_cl_medicament_therapeutic_class_view" />
+ -->        <!-- Pharmacy/Configuration/Configuration/Medicament/Manufacturers -->
+<!--         <menuitem name="Manufacturers" id="menu_pharmacy_config_config_medicament_manufacturers"
+            parent="cl_base.menu_pharmacy_config_config_medicament"
+            groups="cl_base.group_base_manager"
+            sequence="40"
+            action="cl_medicament.act_open_cl_medicament_manufacturer_view" />
+ -->            <!-- Pharmacy/Configuration/Configuration/Medicament/Manufacturers/Strings -->
+<!--             <menuitem name="Strings" id="menu_pharmacy_config_config_medicament_manufacturers_strings"
+                parent="menu_pharmacy_config_config_medicament_manufacturers"
+                groups="cl_base.group_base_manager"
+                sequence="10"
+                action="cl_medicament.act_open_cl_medicament_manufacturer_str_view" />
+ -->        <!-- Pharmacy/Configuration/Configuration/Medicament/Form -->
+        <menuitem name="Form" id="menu_pharmacy_config_config_medicament_form"  
+            parent="cl_base.menu_pharmacy_config_config_medicament"
+            groups="cl_base.group_base_manager"
+            sequence="50" 
+            action="cl_medicament.act_open_cl_medicament_form_view" />
+        <!-- Pharmacy/Configuration/Configuration/Medicament/Route -->
+<!--         <menuitem name="Route" id="menu_pharmacy_config_config_medicament_route"  
+            parent="cl_base.menu_pharmacy_config_config_medicament"
+            groups="cl_base.group_base_manager"
+            sequence="60" 
+            action="cl_medicament.act_open_cl_medicament_route_view" />
+ -->        <!-- Pharmacy/Configuration/Configuration/Medicament/Uom -->
+        <menuitem name="Uom" id="menu_pharmacy_config_config_medicament_uom"  
+            parent="cl_base.menu_pharmacy_config_config_medicament"
+            groups="cl_base.group_base_manager"
+            sequence="70" 
+            action="cl_medicament.act_open_cl_medicament_uom_view" />
+
+    </data>
+</openerp>

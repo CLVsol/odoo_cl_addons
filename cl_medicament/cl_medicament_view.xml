@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_cl_medicament_tree" model="ir.ui.view">
+            <field name="name">cl_medicament.tree</field>
+            <field name="model">cl_medicament</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Medicament">
+                    <field name="name"/>
+                    <field name="presentation"/>
+                    <!--field name="medicament_name"/-->
+                    <field name="concentration"/>
+                    <field name="pres_form"/>
+                    <field name="code"/>
+                    <field name="is_product"/>
+                    <field name="is_fraction"/>
+                    <field name="notes"/>
+                    <field name="ean13"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_cl_medicament_form" model="ir.ui.view">
+            <field name="name">cl_medicament.form</field>
+            <field name="model">cl_medicament</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Medicaments" version="7.0">
+                    <sheet string="Medicament">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                            <!--label for="product_id" class="oe_edit_only"/-->
+                            <!--label for="product_id"/>
+                            <h1>
+                                <field name="product_id" default_focus="1" placeholder="Product Name..."/>
+                            </h1-->
+                            <!--label for="name" class="oe_edit_only"/-->
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Product Name..."/>
+                            </h1>
+                        </div>
+                        <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
+                        <div class="oe_title">
+                            <!--label for="code" class="oe_edit_only"/-->
+                            <label for="code"/>
+                            <h3>
+                                <field name="code" placeholder="Medicament Code..."/>
+                            </h3>
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                        </div>
+                        <group>
+                            <group name="A">
+                                <field name="medicament_name" placeholder="Name..."/>
+                            </group>
+                            <group name="B">
+                                <field name="presentation" placeholder="Presentation..."/>
+                            </group>
+                            <group name="X">
+                                <field name="concentration" placeholder="Concentration..."/>
+                                <field name="pres_form" placeholder="Presentation Form..."/>
+                                <field name="pres_quantity" placeholder="Presentation Quantity..."/>
+                                <field name="pres_quantity_unit" placeholder="Presentation Quantity Unity..."/>
+                            </group>
+                            <group name="Y">
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Medicament Information">
+                                <group>
+                                    <group>
+                                        <field name="is_product"/>
+                                        <field name="is_fraction"/>
+                                        <field name="ean13"/>
+                                    </group>
+                                    <group string="Status">
+                                        <field name="date_inclusion"/>
+                                    </group>
+                                </group>
+                                <field name="notes" placeholder="Notes..." colspan="4"/>
+                            </page>
+                            <page string="Settings" groups="cl_base.group_base_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                    <!--field name="is_medicament"/-->
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_cl_medicament_search" model="ir.ui.view">
+            <field name="name">cl_medicament.search</field>
+            <field name="model">cl_medicament</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Medicament">
+                    <field name="name"/>
+                    <field name="medicament_name"/>
+                    <field name="code"/>
+                    <field name="concentration"/>
+                    <field name="notes"/>
+                    <field name="ean13"/>
+                    <separator/>
+                    <filter string="Not a Product" name="not_product" domain="[('is_product','=',0)]"/>
+                    <filter string="Product" name="product" domain="[('is_product','=',1)]"/>
+                    <filter string="Not a Fraction" name="not_fraction" domain="[('is_fraction','=',0)]"/>
+                    <filter string="Fraction" name="fraction" domain="[('is_fraction','=',1)]"/>
+                    <filter string="Missing Medicament Code" name="product" domain="[('code','=',False)]"/>
+                    <filter string="Missing Concentration" name="missing_active_component" domain="[('concentration','=',False)]"/>
+                    <filter string="Missing Presentastion Form" name="missing_pres_form" domain="[('pres_form','=',False)]"/>
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Concentration" domain="[]" context="{'group_by': 'concentration'}"/>
+                        <filter string="Presentaion Form" domain="[]" context="{'group_by': 'pres_form'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_cl_medicament_view">
+            <field name="name">Medicaments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cl_medicament</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_cl_medicament_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new medicament.
+              </p>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_cl_medicament_view_form">
+            <field name="act_window_id" ref="act_open_cl_medicament_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_cl_medicament_form"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_cl_medicament_view_tree">
+            <field name="act_window_id" ref="act_open_cl_medicament_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_cl_medicament_tree"/>
+        </record>
+        
+    </data>
+</openerp>

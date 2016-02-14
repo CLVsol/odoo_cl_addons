@@ -17,27 +17,22 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Base Module',
-    'summary': 'Base Module needed for all CLVsol Solutions.',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'depends': [],
-    'data': [
-        'security/cl_base_security.xml',
-        'menu/cl_base_menu_view.xml',
-        'menu/cl_groupings_menu_view.xml',
-        # 'menu/cl_agro_menu_view.xml',
-        'menu/cl_community_menu_view.xml',
-        'menu/cl_health_menu_view.xml',
-        # 'menu/cl_insurance_menu_view.xml',
-        'menu/cl_pharmacy_menu_view.xml',
-        ],
-    'test': [],
-    'installable': True,
-    'application': False,
-    'active': False,
-}
+from openerp import models, fields
+
+
+class cl_medicament_uom(models.Model):
+    _name = 'cl_medicament.uom'
+
+    name = fields.Char(size=256, string='Uom', required=True,
+                       translate=True,
+                       help="Unity of Measure.")
+    code = fields.Char(size=256, string='Code')
+    notes = fields.Text(string='Notes')
+    active = fields.Boolean('Active',
+                            help="If unchecked, it will allow you to hide the uom without removing it.",
+                            default=1)
+
+    _sql_constraints = [
+        ('name_uniq', 'UNIQUE(name)', 'Name must be unique!'),
+        ('code_uniq', 'UNIQUE(code)', 'Code must be unique!'),
+        ]
