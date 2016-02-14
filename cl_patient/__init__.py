@@ -18,7 +18,7 @@
 ################################################################################
 
 import cl_patient
-# import person
+import cl_person
 # import category
 # import tag
 # import annotation
