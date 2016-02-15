@@ -18,10 +18,3 @@
 ################################################################################
 
 import cl_address
-import hierarchy
-import category
-import tag
-import annotation
-# import seq
-# import wkf
-# import history
