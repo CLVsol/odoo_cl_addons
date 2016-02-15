@@ -29,7 +29,7 @@
     'depends': [
         'cl_base',
         'cl_tag',
-        # 'cl_annotation',
+        'cl_annotation',
         # 'cl_address',
         ],
     'data': [
@@ -38,7 +38,7 @@
         'cl_person_view.xml',
         'category/cl_person_category_view.xml',
         'tag/cl_tag_view.xml',
-        # 'annotation/cl_annotation_view.xml',
+        'annotation/cl_annotation_view.xml',
         # 'seq/cl_person_sequence.xml',
         # 'seq/cl_person_category_sequence.xml',
         # 'wkf/cl_person_workflow.xml',

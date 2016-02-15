@@ -17,11 +17,28 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import cl_person
-import category
-import tag
-import annotation
-# import seq
-# import wkf
-# import history
-# import address
+from openerp import models, fields
+
+
+class cl_person(models.Model):
+    _inherit = 'cl_person'
+
+    annotation_ids = fields.Many2many(
+        'cl_annotation',
+        'cl_person_annotation_rel',
+        'person_id',
+        'annotation_id',
+        'Annotations'
+        )
+
+
+class cl_annotation(models.Model):
+    _inherit = 'cl_annotation'
+
+    person_ids = fields.Many2many(
+        'cl_person',
+        'cl_person_annotation_rel',
+        'annotation_id',
+        'person_id',
+        'Persons'
+        )
