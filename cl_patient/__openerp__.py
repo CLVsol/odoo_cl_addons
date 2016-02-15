@@ -38,7 +38,7 @@
         # 'security/ir.model.access.csv',
         'cl_patient_view.xml',
         'cl_person_view.xml',
-        # 'category/cl_patient_category_view.xml',
+        'category/cl_patient_category_view.xml',
         # 'tag/cl_tag_view.xml',
         # 'annotation/cl_annotation_view.xml',
         # 'seq/cl_patient_sequence.xml',
