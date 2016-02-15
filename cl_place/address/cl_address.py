@@ -17,11 +17,14 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import cl_place
-import category
-import tag
-import annotation
-import address
-# import seq
-# import wkf
-# import history
+from openerp import models, fields
+
+
+class cl_address(models.Model):
+    _inherit = 'cl_address'
+
+    place_ids = fields.One2many(
+        'cl_place',
+        'address_id',
+        'Places'
+        )
