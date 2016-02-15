@@ -34,6 +34,7 @@
         'security/cl_address_security.xml',
         # 'security/ir.model.access.csv',
         'cl_address_view.xml',
+        'hierarchy/cl_address_view.xml',
         'category/cl_address_category_view.xml',
         'tag/cl_tag_view.xml',
         'annotation/cl_annotation_view.xml',
