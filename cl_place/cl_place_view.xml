@@ -59,9 +59,6 @@
                         <notebook>
                             <page string="Information">
                                 <group>
-                                    <group string="Address Information">
-                                        <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
-                                    </group>
                                     <group string="Status">
                                         <field name="date_inclusion"/>
                                     </group>

@@ -28,3 +28,15 @@ class cl_address(models.Model):
         'address_id',
         'Places'
         )
+
+
+class cl_place(models.Model):
+    _inherit = 'cl_place'
+
+    address_id = fields.Many2one('cl_address', 'Place Address')
+
+    def onchange_address_id(self, cr, uid, ids, address, context=None):
+        if address:
+            address = self.pool.get('cl_address').browse(cr, uid, address, context=context)
+            return {'value': {}}
+        return {'value': {}}
