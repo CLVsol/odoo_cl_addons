@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_cl_address_form_person" model="ir.ui.view">
+            <field name="name">cl_address.form</field>
+            <field name="model">cl_address</field>
+            <field name="inherit_id" ref="cl_address.view_cl_address_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Places">
+                        <group>
+                            <field name="place_ids" colspan="4" nolabel="1" />
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <record id="view_cl_place_form_cl_address" model="ir.ui.view">
+            <field name="name">cl_place.form</field>
+            <field name="model">cl_place</field>
+            <field name="inherit_id" ref="view_cl_place_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <group string="Status" position="before">
+                    <group string="Address Information">
+                        <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <record id="view_cl_place_search_cl_address" model="ir.ui.view">
+            <field name="name">cl_place.search</field>
+            <field name="model">cl_place</field>
+            <field name="inherit_id" ref="view_cl_place_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <group string="Group By..." position="inside">
+                    <filter string="Address" context="{'group_by': 'address_id'}"/>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</openerp>

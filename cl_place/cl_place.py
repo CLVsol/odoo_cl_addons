@@ -31,8 +31,6 @@ class cl_place(models.Model):
     parent_id = fields.Many2one('cl_place', 'Parent Place', select=True, ondelete='restrict')
     complete_name = fields.Char(string='Full Place', compute='_name_get_fnc', store=False, readonly=True)
     child_ids = fields.One2many('cl_place', 'parent_id', 'Child Places')
-    # address_id = fields.Many2one('res.partner', 'Place Address')
-    address_id = fields.Many2one('cl_address', 'Place Address')
     notes = fields.Text(string='Notes')
     date_inclusion = fields.Datetime("Inclusion Date", required=False, readonly=False,
                                      default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
@@ -96,9 +94,3 @@ class cl_place(models.Model):
             self.complete_name = complete_name[0][1]
         else:
             self.complete_name = self.name
-
-    def onchange_address_id(self, cr, uid, ids, address, context=None):
-        if address:
-            address = self.pool.get('res.partner').browse(cr, uid, address, context=context)
-            return {'value': {'comm_phone': address.phone, 'mobile_phone': address.mobile}}
-        return {'value': {}}
