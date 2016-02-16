@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        
+        <record id="view_cl_address_tree_cl_residence" model="ir.ui.view">
+            <field name="name">cl_address.tree</field>
+            <field name="model">cl_address</field>
+            <field name="inherit_id" ref="cl_address.view_cl_address_tree"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <field name="code" position="before">
+                    <field name="is_residence"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_cl_address_form_cl_residence" model="ir.ui.view">
+            <field name="name">cl_address.form</field>
+            <field name="model">cl_address</field>
+            <field name="inherit_id" ref="cl_address.view_cl_address_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <group name="Address" position="before">
+                    <group>
+                        <label for="is_residence"/>
+                        <h2>
+                            <field name="is_residence"/>
+                        </h2>
+                    </group>
+                    <group>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+        <record id="view_cl_address_search_cl_residence" model="ir.ui.view">
+            <field name="name">cl_address.search</field>
+            <field name="model">cl_address</field>
+            <field name="inherit_id" ref="cl_address.view_cl_address_search"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <group string="Group By..." position="before">
+                    <filter name="filter_is_residence" string="Is Residence" domain="[('is_residence','=',True)]"/>
+                </group>
+                <filter string="Country" position="after">
+                    <filter string="Is Residence" context="{'group_by': 'is_residence'}"/>
+                </filter>
+            </field>
+        </record>
+
+        <record id="act_open_cl_residence_view" model="ir.actions.act_window">
+            <field name="name">Addresses</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cl_address</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_filter_is_residence': True}</field>
+            <field name="search_view_id" ref="cl_address.view_cl_address_search"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new address (residence).
+              </p>
+            </field>
+        </record>
+
+    </data>
+</openerp>

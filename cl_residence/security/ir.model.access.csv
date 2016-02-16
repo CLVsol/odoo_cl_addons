@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_cl_residence_residence_user,cl_residence,model_cl_residence,cl_base.group_residence_user,1,0,0,0
+access_cl_residence_residence_manager,cl_residence,model_cl_residence,cl_base.group_residence_manager,1,1,1,
+access_cl_residence_base_smanager,cl_residence,model_cl_residence,cl_base.group_base_smanager,1,1,1,1
+
+access_cl_residence_categry_residence_user,cl_residence.category,model_cl_residence_category,cl_base.group_residence_user,1,0,0,0
+access_cl_residence_category_residence_category_manager,cl_residence.category,model_cl_residence_category,cl_base.group_residence_category_manager,1,1,1,0
+access_cl_residence_categoy_base_smanager,cl_residence.category,model_cl_residence_category,cl_base.group_base_smanager,1,1,1,1
+
+access_cl_residence_histoy_residence_user,cl_residence.history,model_cl_residence_history,cl_base.group_residence_user,1,0,0,0
+access_cl_residence_history_ddress_manager,cl_residence.history,model_cl_residence_history,cl_base.group_residence_manager,1,1,1,0
+access_cl_residence_histor_base_smanager,cl_residence.history,model_cl_residence_history,cl_base.group_base_smanager,1,1,1,1
