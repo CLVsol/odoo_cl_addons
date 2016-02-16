@@ -20,6 +20,7 @@
 import cl_patient
 import cl_person
 import category
+import address
 # import tag
 # import annotation
 # import seq
