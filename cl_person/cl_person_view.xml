@@ -51,12 +51,6 @@
                         <notebook>
                             <page string="Public Information">
                                 <group>
-                                    <!--group string="Contact Information">
-                                        <field name="address_id" on_change="onchange_address_id(address_id)" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}'/>
-                                        <field name="person_email" widget="email"/>
-                                        <field name="person_phone"/>
-                                        <field name="mobile_phone"/>
-                                    </group-->
                                     <group string="Status">
                                         <field name="date_inclusion"/>
                                     </group>
@@ -109,7 +103,6 @@
                     <field name="notes"/>
                     <separator/>
                     <group expand="0" string="Group By...">
-                        <filter string="Address" domain="[]" context="{'group_by': 'address_id'}"/>
                     </group>
                 </search>
             </field>

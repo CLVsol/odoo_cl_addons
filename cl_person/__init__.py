@@ -21,6 +21,7 @@ import cl_person
 import category
 import tag
 import annotation
+import address
 # import seq
 # import wkf
 # import history
