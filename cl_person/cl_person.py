@@ -28,10 +28,6 @@ class cl_person(models.Model):
     name = fields.Char('Name', required=True, size=64)
     alias = fields.Char('Alias', size=64, help='Common name that the Person is referred')
     code = fields.Char(size=64, string='Person Code', required=False)
-    # address_id = fields.Many2one('cl_address', 'Person Address', ondelete='restrict')
-    # person_phone = fields.Char('Person Phone', size=32)
-    # mobile_phone = fields.Char('Person Mobile', size=32)
-    # person_email = fields.Char('Person Email', size=240)
     notes = fields.Text(string='Notes')
     date_inclusion = fields.Datetime("Inclusion Date", required=False, readonly=False,
                                      default=lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
@@ -75,12 +71,3 @@ class cl_person(models.Model):
             self.age = str(delta.years) + "y " + str(delta.months) + "m " + str(delta.days)+"d"
         else:
             self.age = "No Date of Birth!"
-
-    # def onchange_address_id(self, cr, uid, ids, address, context=None):
-    #     if address:
-    #         address = self.pool.get('cl_address').browse(cr, uid, address, context=context)
-    #         return {'value': {'person_phone': address.phone,
-    #                           'mobile_phone': address.mobile,
-    #                           'person_email': address.email
-    #                           }}
-    #     return {'value': {}}

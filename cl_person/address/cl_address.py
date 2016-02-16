@@ -17,45 +17,32 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Person',
-    'summary': 'Person Module used by the CLVsol Solutions.',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'images': [],
-    'depends': [
-        'cl_base',
-        'cl_tag',
-        'cl_annotation',
-        'cl_address',
-        ],
-    'data': [
-        'security/cl_person_security.xml',
-        # 'security/ir.model.access.csv',
-        'cl_person_view.xml',
-        'category/cl_person_category_view.xml',
-        'tag/cl_tag_view.xml',
-        'annotation/cl_annotation_view.xml',
-        'address/cl_address_view.xml',
-        'person_address/cl_person_address_view.xml',
-        # 'seq/cl_person_sequence.xml',
-        # 'seq/cl_person_category_sequence.xml',
-        # 'wkf/cl_person_workflow.xml',
-        # 'wkf/cl_person_wkf_view.xml',
-        # 'history/cl_person_history_view.xml',
-        'menu/cl_person_menu_view.xml',
-        # 'cl_address/cl_address_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'application': False,
-    'active': False,
-    'css': [],
-}
+from openerp import models, fields
+
+
+class cl_address(models.Model):
+    _inherit = 'cl_address'
+
+    person_ids = fields.One2many(
+        'cl_person',
+        'address_id',
+        'Persons'
+        )
+
+
+class cl_person(models.Model):
+    _inherit = 'cl_person'
+
+    address_id = fields.Many2one('cl_address', 'Person Address', ondelete='restrict')
+    person_phone = fields.Char('Person Phone', size=32)
+    mobile_phone = fields.Char('Person Mobile', size=32)
+    person_email = fields.Char('Person Email', size=240)
+
+    def onchange_address_id(self, cr, uid, ids, address, context=None):
+        if address:
+            address = self.pool.get('cl_address').browse(cr, uid, address, context=context)
+            return {'value': {'person_phone': address.phone,
+                              'mobile_phone': address.mobile,
+                              'person_email': address.email
+                              }}
+        return {'value': {}}

@@ -17,45 +17,52 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Person',
-    'summary': 'Person Module used by the CLVsol Solutions.',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'images': [],
-    'depends': [
-        'cl_base',
-        'cl_tag',
-        'cl_annotation',
-        'cl_address',
-        ],
-    'data': [
-        'security/cl_person_security.xml',
-        # 'security/ir.model.access.csv',
-        'cl_person_view.xml',
-        'category/cl_person_category_view.xml',
-        'tag/cl_tag_view.xml',
-        'annotation/cl_annotation_view.xml',
-        'address/cl_address_view.xml',
-        'person_address/cl_person_address_view.xml',
-        # 'seq/cl_person_sequence.xml',
-        # 'seq/cl_person_category_sequence.xml',
-        # 'wkf/cl_person_workflow.xml',
-        # 'wkf/cl_person_wkf_view.xml',
-        # 'history/cl_person_history_view.xml',
-        'menu/cl_person_menu_view.xml',
-        # 'cl_address/cl_address_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'application': False,
-    'active': False,
-    'css': [],
-}
+from openerp.osv import fields, osv
+from datetime import *
+
+
+class cl_person_address(osv.Model):
+    _name = 'cl_person.address'
+
+    _columns = {
+        'address_id': fields.many2one('cl_address', 'Address', required=False),
+        'person_id': fields.many2one('cl_person', string='Person', help='Person'),
+        'sign_in_date': fields.datetime("Sign in date", required=False),
+        'sign_out_date': fields.datetime("Sign out date", required=False),
+        'notes': fields.text(string='Notes'),
+        'active': fields.boolean(
+            'Active',
+            help="If unchecked, it will allow you to hide the person address without removing it."
+            ),
+    }
+
+    _order = "sign_in_date desc"
+
+    _defaults = {
+        'sign_in_date': lambda *a: datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'active': 1,
+    }
+
+
+class cl_person(osv.osv):
+    _inherit = 'cl_person'
+
+    _columns = {
+        'person_address_ids': fields.one2many(
+            'cl_person.address',
+            'person_id',
+            'Person Addresses'
+            ),
+    }
+
+
+# class cl_address(osv.osv):
+#     _inherit = 'cl_address'
+
+#     _columns = {
+#         'person_address_ids': fields.one2many(
+#             'cl_person.address',
+#             'address_id',
+#             'Person Addresses'
+#             ),
+#     }
