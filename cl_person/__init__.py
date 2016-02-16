@@ -22,6 +22,7 @@ import category
 import tag
 import annotation
 import address
+import person_address
 # import seq
 # import wkf
 # import history
