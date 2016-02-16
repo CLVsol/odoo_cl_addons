@@ -41,7 +41,7 @@
         'category/cl_patient_category_view.xml',
         'address/cl_address_view.xml',
         'tag/cl_tag_view.xml',
-        # 'annotation/cl_annotation_view.xml',
+        'annotation/cl_annotation_view.xml',
         # 'seq/cl_patient_sequence.xml',
         # 'seq/cl_patient_category_sequence.xml',
         # 'wkf/cl_patient_workflow.xml',
