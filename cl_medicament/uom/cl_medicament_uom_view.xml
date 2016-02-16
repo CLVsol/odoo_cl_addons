@@ -9,6 +9,8 @@
                 <tree string="Medicament Uom">
                     <field name="name"/>
                     <field name="code"/>
+                    <field name="description"/>
+                    <field name="notes"/>
                 </tree>
             </field>
         </record>
@@ -20,17 +22,23 @@
             <field name="arch" type="xml">
                 <form string="Medicament Uom" version="7.0">
                     <sheet>
-                        <group>
-                            <group>
-                                <field name="name" placeholder="Unit of measure..."/>
-                                <field name="code" placeholder="Uom Code..."/>
-                            </group>
-                            <group>
-                            </group>
-                        </group>
+                        <div class="oe_title">
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" default_focus="1" medicamentholder="Medicament Uom..."/>
+                            </h1>
+                            <label for="code"/>
+                            <h2>
+                                <field name="code" medicamentholder="Uom Code..."/>
+                            </h2>
+                            <label for="description"/>
+                            <h3>
+                                <field name="description" medicamentholder="Description..."/>
+                            </h3>
+                        </div>
                         <notebook>
                             <page string="Notes">
-                                <field name="notes" placeholder="Notes..." colspan="4"/>
+                                <field name="notes" medicamentholder="Notes..." colspan="4"/>
                             </page>
                             <page string="Settings" groups="cl_base.group_base_rmanager">
                                 <group>
@@ -51,6 +59,8 @@
                 <search string="Medicament Uom">
                     <field name="name"/>
                     <field name="code"/>
+                    <field name="description"/>
+                    <field name="notes"/>
                 </search>
             </field>
         </record>
@@ -64,6 +74,12 @@
             <field name="search_view_id" ref="view_cl_medicament_uom_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new medicament uom.
+              </p>
+            </field>
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_cl_medicament_uom_view_uom">

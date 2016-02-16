@@ -1,36 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-        <record id="view_cl_medicament_form_tree" model="ir.ui.view">
-            <field name="name">cl_medicament.form.tree</field>
-            <field name="model">cl_medicament.form</field>
-            <field name="priority" eval="8"/>
-            <field name="arch" type="xml">
-                <tree string="Medicament Form">
-                    <field name="name"/>
-                    <field name="code"/>
-                </tree>
-            </field>
-        </record>
-        
+
         <record id="view_cl_medicament_form_form" model="ir.ui.view">
-            <field name="name">cl_medicament.form.form</field>
+            <field name="name">Medicament Form</field>
             <field name="model">cl_medicament.form</field>
-            <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="Medicament Form" version="7.0">
+                <form string="Medicament Forms" version="7.0">
                     <sheet>
-                        <group>
-                            <group>
-                                <field name="name" placeholder="Medicament Form..."/>
-                                <field name="code" placeholder="Form Code..."/>
-                            </group>
-                            <group>
-                            </group>
-                        </group>
+                        <div class="oe_title">
+                            <!--label for="parent_id" class="oe_edit_only"/-->
+                            <label for="parent_id"/>
+                            <h2>
+                                <field name="parent_id" medicamentholder="Parent Form..."/>
+                            </h2>
+                            <label for="name"/>
+                            <h1>
+                                <field name="name" default_focus="1" medicamentholder="Medicament Form..."/>
+                            </h1>
+                            <label for="code"/>
+                            <h2>
+                                <field name="code" medicamentholder="Form Code..."/>
+                            </h2>
+                            <label for="description"/>
+                            <h3>
+                                <field name="description" medicamentholder="Description..."/>
+                            </h3>
+                        </div>
                         <notebook>
                             <page string="Notes">
-                                <field name="notes" placeholder="Notes..." colspan="4"/>
+                                <field name="notes" medicamentholder="Notes..." colspan="4"/>
+                            </page>
+                            <page string="Child Forms">
+                                <group>
+                                    <field name="child_ids" colspan="4" nolabel="1"/>
+                                </group>
                             </page>
                             <page string="Settings" groups="cl_base.group_base_rmanager">
                                 <group>
@@ -43,6 +47,20 @@
             </field>
         </record>
         
+        <record id="view_cl_medicament_form_tree" model="ir.ui.view">
+            <field name="name">cl_medicament.form.tree</field>
+            <field name="model">cl_medicament.form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Medicament Forms">
+                    <field name="complete_name"/>
+                    <field name="code"/>
+                    <field name="description"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
         <record id="view_cl_medicament_form_search" model="ir.ui.view">
             <field name="name">cl_medicament.form.search</field>
             <field name="model">cl_medicament.form</field>
@@ -50,13 +68,21 @@
             <field name="arch" type="xml">
                 <search string="Medicament Form">
                     <field name="name"/>
+                    <field name="parent_id"/>
                     <field name="code"/>
+                    <field name="description"/>
+                    <field name="notes"/>
+                    <separator/>
+                    <filter string="Inactive Forms" name="active" domain="[('active','=',0)]" help="Inactive Forms"/>
+                    <group expand="0" string="Group By...">
+                        <filter string="Parent Form" domain="[]" context="{'group_by':'parent_id'}"/>
+                    </group>
                 </search>
             </field>
         </record>
         
         <record model="ir.actions.act_window" id="act_open_cl_medicament_form_view">
-            <field name="name">Medicament Form</field>
+            <field name="name">Medicament Forms</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">cl_medicament.form</field>
             <field name="view_type">form</field>
@@ -64,6 +90,12 @@
             <field name="search_view_id" ref="view_cl_medicament_form_search"/>
             <field name="domain">[]</field>
             <field name="context">{}</field>
+            <field name="view_id" eval="False"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new medicament form.
+              </p>
+            </field>
         </record>
         
         <record model="ir.actions.act_window.view" id="act_open_cl_medicament_form_view_form">
@@ -79,6 +111,6 @@
             <field name="view_mode">tree</field>
             <field name="view_id" ref="view_cl_medicament_form_tree"/>
         </record>
-
+        
     </data>
 </openerp>
