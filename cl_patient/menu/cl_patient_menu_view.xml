@@ -21,11 +21,11 @@
                     parent="menu_health_health"
                     groups="cl_base.group_base_manager"
                     sequence="90"/-->
-<!--                     <menuitem name="Patient Categories" id="menu_health_health_config_patient_categories" 
+                    <menuitem name="Patient Categories" id="menu_health_health_config_patient_categories" 
                         parent="cl_base.menu_health_health_config"
                         groups="cl_base.group_patient_user"
                         sequence="10"
                         action="cl_patient.act_open_cl_patient_category_view"/>
- -->        
+        
     </data>
 </openerp>
