@@ -47,12 +47,6 @@
                         <notebook>
                             <page string="Public Information">
                                 <group>
-                                    <!--group string="Contact Information">
-                                        <field name="address_id" context="{'show_address': 1}" options='{"always_reload": True, "highlight_first_line": True}' readonly='True'/>
-                                        <field name="person_email" widget="email" readonly='True'/>
-                                        <field name="person_phone" readonly='True'/>
-                                        <field name="mobile_phone" readonly='True'/>
-                                    </group-->
                                     <group string="Status">
                                         <field name="patient_date_inclusion"/>
                                     </group>
@@ -102,10 +96,8 @@
                     <field name="name"/>
                     <field name="alias"/>
                     <field name="patient_code"/>
-                    <!--field name="address_id"/-->
                     <separator/>
                     <group expand="0" string="Group By...">
-                        <filter string="Address" domain="[]" context="{'group_by': 'address_id'}"/>
                     </group>
                 </search>
             </field>

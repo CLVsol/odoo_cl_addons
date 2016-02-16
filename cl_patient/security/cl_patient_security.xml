@@ -11,5 +11,9 @@
             <field name="implied_ids" eval="[(4, ref('cl_base.group_patient_user'))]"/>
         </record>
         
+        <record id="cl_base.group_patient_category_manager" model="res.groups">
+            <field name="name">Patient Category Manager</field>
+        </record>
+        
     </data>
 </openerp>
