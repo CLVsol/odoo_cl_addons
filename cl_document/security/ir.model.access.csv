@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_cl_document_document_user,cl_document,model_cl_document,cl_base.group_document_user,1,0,0,0
+access_cl_document_document_manager,cl_document,model_cl_document,cl_base.group_document_manager,1,1,1,0
+access_cl_document_base_smanager,cl_document,model_cl_document,cl_base.group_base_smanager,1,1,1,1
+
+access_cl_document_type_document_user,cl_document.type,model_cl_document_type,cl_base.group_document_user,1,0,0,0
+access_cl_document_type_document_manager,cl_document.type,model_cl_document_type,cl_base.group_document_manager,1,1,1,0
+access_cl_document_type_base_smanager,cl_document.type,model_cl_document_type,cl_base.group_base_smanager,1,1,1,1
+
+access_cl_document_history_document_user,cl_document.history,model_cl_document_history,cl_base.group_document_user,1,0,0,0
+access_cl_document_history_document_manager,cl_document.history,model_cl_document_history,cl_base.group_document_manager,1,1,1,0
+access_cl_document_history_base_smanager,cl_document.history,model_cl_document_history,cl_base.group_base_smanager,1,1,1,1
