@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+       <!-- Base -->
+        <!--menuitem name="Base" id="menu_base" 
+            groups="cl_base.group_base_user"
+            sequence="11"/-->
+            <!-- Base/Base -->
+            <!--menuitem name="Base" id="menu_base_base"  
+                parent="menu_base"
+                groups="cl_base.group_base_user"
+                sequence="10"/-->
+                <!-- Base/Base/Documents -->
+                <menuitem name="Documents" id="menu_base_base_documents"
+                    parent="cl_base.menu_base_base"
+                    groups="cl_base.group_document_user"
+                    sequence="30"
+                    action="cl_document.act_open_cl_document_view"/>
+                <!-- Base/Base/Configuration -->
+                <!--menuitem name="Configuration" id="menu_base_base_config"  
+                    parent="menu_base_base"
+                    groups="cl_base.group_base_manager"
+                    sequence="90"/-->
+                    <!-- Base/Configuration/Configuration/Document-->
+                    <menuitem name="Document" id="menu_base_config_config_document"
+                        parent="cl_base.menu_base_config_config"
+                        groups="cl_base.group_base_manager"
+                        sequence="30"/>
+                        <!-- Base/Configuration/Configuration/Document Categories -->
+                        <!--menuitem name="Document Categories" id="menu_base_config_config_document_categories" 
+                            parent="cl_base.menu_base_config_config"
+                            groups="cl_base.group_document_user"
+                            sequence="20"
+                            action="cl_document.act_open_cl_document_category_view"/-->
+                        <!-- Base/Configuration/Configuration/Document/Types-->
+<!--                         <menuitem name="Types" id="menu_base_config_config_document_types"
+                            parent="menu_base_config_config_document"
+                            groups="cl_base.group_base_manager"
+                            sequence="30"
+                            action="cl_document.act_open_cl_document_type_view"/>
+ -->
+    </data>
+</openerp>

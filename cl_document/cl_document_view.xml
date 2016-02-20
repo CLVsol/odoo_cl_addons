@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_cl_document_tree" model="ir.ui.view">
+            <field name="name">cl_document.tree</field>
+            <field name="model">cl_document</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Document">
+                    <field name="name" groups="cl_base.group_document_approver"/>
+                    <!--field name="doc_type"/-->
+                    <field name="date_requested"/>
+                    <field name="date_document"/>
+                    <field name="responsible"/>
+                    <field name="notes"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_cl_document_form" model="ir.ui.view">
+            <field name="name">cl_document.form</field>
+            <field name="model">cl_document</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Documents" version="7.0">
+                    <sheet string="Document">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                            <!--label for="name" class="oe_edit_only"/-->
+                            <label for="name" groups="cl_base.group_document_approver"/>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Document Code..." groups="cl_base.group_document_approver"/>
+                            </h1>
+                        </div>
+                        <!--field name="image_medium" widget='image' class="oe_left oe_avatar"/-->
+                        <div class="oe_title">
+                            <!--label for="doc_type" class="oe_edit_only"/-->
+                            <!--label for="doc_type"/>
+                            <h2>
+                                <field name="doc_type" placeholder="Document Type..."/>
+                            </h2-->
+                            <!--label for="date_requested" class="oe_edit_only"/-->
+                            <label for="date_requested"/>
+                            <h3>
+                                <field name="date_requested" placeholder="Date requested..."/>
+                            </h3>
+                            <!--label for="date_document" class="oe_edit_only"/-->
+                            <label for="date_document"/>
+                            <h3>
+                                <field name="date_document" placeholder="Document Date..."/>
+                            </h3>
+                            <!--label for="responsible" class="oe_edit_only"/-->
+                            <label for="responsible"/>
+                            <h3>
+                                <field name="responsible" placeholder="Document Responsible..."/>
+                            </h3>
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                        </div>
+                        <notebook>
+                            <!--page string="Document Information">
+                                <group>
+                                    <group string="Questions">
+                                    </group>
+                                    <group string="Signatures">
+                                        <field name="date"/>
+                                        <field name="responsible"/>
+                                    </group>
+                                </group>
+                                <field name="notes" placeholder="Other Information ..." colspan="4"/>
+                            </page-->
+                            <page string="Settings" groups="cl_base.group_base_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_cl_document_search" model="ir.ui.view">
+            <field name="name">cl_document.search</field>
+            <field name="model">cl_document</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Document">
+                    <field name="name"/>
+                    <!--field name="doc_type"/-->
+                    <field name="date_requested"/>
+                    <field name="date_document"/>
+                    <field name="responsible"/>
+                    <field name="notes"/>
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                        <!--filter string="Document Type" domain="[]" context="{'group_by':'doc_type'}"/-->
+                        <filter string="Document Responsible" domain="[]" context="{'group_by':'responsible'}"/>
+                        <filter string="Document Date" domain="[]" context="{'group_by': 'date_document'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_cl_document_view">
+            <field name="name">Documents</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cl_document</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_cl_document_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a new document.
+              </p>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_cl_document_view_form">
+            <field name="act_window_id" ref="act_open_cl_document_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_cl_document_form"/>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_cl_document_view_tree">
+            <field name="act_window_id" ref="act_open_cl_document_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_cl_document_tree"/>
+        </record>
+        
+    </data>
+</openerp>
