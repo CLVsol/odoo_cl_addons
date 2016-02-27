@@ -38,7 +38,7 @@
         'security/cl_community_security.xml',
         # 'security/ir.model.access.csv',
         'cl_community_view.xml',
-        # 'category/cl_community_category_view.xml',
+        'category/cl_community_category_view.xml',
         # 'cl_tag/cl_tag_view.xml',
         # 'cl_annotation/cl_annotation_view.xml',
         # 'seq/cl_community_sequence.xml',
