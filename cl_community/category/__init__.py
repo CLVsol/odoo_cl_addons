@@ -17,13 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import cl_community
-import category
-# import tag
-# import annotation
-# import seq
-# import wkf
-# import history
-# import person
-# import family
-# import hr_employee
+import cl_community_category
