@@ -33,6 +33,8 @@
         'cl_todo_task_view.xml',
         'security/ir.model.access.csv',
         'security/cl_todo_task_access_rules.xml',
+        'category/cl_todo_category_view.xml',
+        'stage/cl_todo_task_stage_view.xml',
         'menu/cl_todo_task_menu_view.xml',
         ],
     'test': [],
