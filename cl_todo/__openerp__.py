@@ -36,6 +36,8 @@
         'category/cl_todo_category_view.xml',
         'stage/cl_todo_task_stage_view.xml',
         'wizard/cl_todo_wizard_view.xml',
+        'kanban/cl_todo_task_view.xml',
+        # 'kanban/cl_todo_task_view_vignette.xml',
         'menu/cl_todo_task_menu_view.xml',
         ],
     'test': [],
