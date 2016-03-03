@@ -3,11 +3,33 @@
     <data>
 
         <!-- Mail/Messaging/My To-Do -->
-        <menuitem name="My To-Do" id="menu_cl_todo_task"
+<!--         <menuitem name="My To-Do" id="menu_cl_todo_task"
             parent="mail.mail_feeds"
             groups="base.group_user"
             sequence="20"
             action="action_cl_todo_task"/>
+
+ -->        <!-- Menu Items -->
+        <menuitem id="menu_todo_task_main"
+          name="To-Do" parent="mail.mail_my_stuff" />
+
+        <menuitem name="To-Do Tasks" id="menu_cl_todo_task"
+          parent="menu_todo_task_main"
+          groups="base.group_user"
+          sequence="10"
+          action="action_cl_todo_task" />
+
+        <menuitem name="Todo Task Categories" id="menu_todo_task_main_todo_task_categories" 
+            parent="menu_todo_task_main"
+            groups="base.group_user"
+            sequence="20"
+            action="cl_todo.act_open_cl_todo_task_category_view"/>
+
+        <menuitem name="To-Do Stages" id="menu_todo_task_main_task_stage"
+            parent="menu_todo_task_main"
+            groups="base.group_user"
+            sequence="30"
+            action="cl_todo.action_cl_todo_task_stage" />
 
     </data>
 </openerp>
